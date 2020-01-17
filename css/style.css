@@ -10,7 +10,17 @@
     width: 100%;
     background-color: #fff;
 }
-#banner {position: relative;}
+#banner {
+    position: relative;
+}
+#movie {
+    background-color: #f2f2f2;
+}
+#event {}
+#opening {
+    background: url(../img/bg01.jpg) no-repeat center top /cover;
+}
+#new {}
 
 
 /* 가운데 영역 */
@@ -318,6 +328,139 @@
     margin-right: 2%;
 }
 
+/* 이벤트  */
+.event {padding: 100px 0;}
+.event img {display: block;}
+.event:after {content: ""; display: block; clear: both;}
+.event h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.event .event_left {
+    float: left;
+    width: 66%;
+    margin-right: 2%;
+    overflow: hidden;
+}
+.event .event_left .event_box1 {
+    float: left;
+    width: 50%;
+} 
+.event .event_left .event_box2 {
+    float: left;
+    width: 50%;
+}
+.event .event_right {
+    float: left;
+    width: 32%;
+}
+
+/* 오프닝 */
+.opening {
+    padding: 100px 0;
+    text-align: center;
+    color: #b79a5b;
+}
+.opening h2 {}
+.opening h2 .grand {
+    display: inline-block;
+    width: 330px;
+    height: 50px;
+    background-position: 0 -175px;
+}
+.opening .date {
+    background-position: 0 -225px;
+    display: inline-block;
+    width: 260px;
+    height: 45px;
+}
+.opening .desc {
+    font-size: 35px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    background: url(../img/bar.png) no-repeat bottom center / 100%;
+}
+.opening .open_box {
+    overflow: hidden;
+    padding: 20px 3% 0 3%;
+}
+.opening .open_box > div {
+    float: left;
+    width: 27.333%;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    margin: 4% 3% 0 3%;
+    padding: 0 0 25px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.opening .open_box > div h3 {
+    width: 140px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    border: 1px solid #fff;
+    background-color: #3a1a6a;
+    margin: -10px auto;
+}
+.opening .open_box > div p {
+    color: #fff;
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 300;
+}
+.opening .open_box > div em {
+    display: block;
+    margin-top: 25px;
+    font-weight: 400;
+}
+.opening .open_box > div strong {
+    display: block;
+    font-weight: 500;
+}
+
+/* 새로운 영화 */
+.new {
+    padding: 100px 0;
+    position: relative;
+}
+.new h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.new .new_left {
+    position: relative;
+    height: 550px;
+    background: url(../img/new01.jpg) no-repeat center center;
+    background-size: cover;
+    margin-right: 415px;
+}
+.new .new_left .play {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, -50%);
+}
+.new .new_left .play .st0 {
+    fill: #fff;
+    opacity: 0.3;
+}
+.new .new_left .play .st1 {
+    fill: #fff;
+}
+
+.new .new_right {
+    width: 392px;
+    height: 550px;
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 153px; right: 0;
+}
+
+
 
 
 /* 미디어쿼리 */
@@ -363,14 +506,24 @@
         padding-top: 35px;
     }
     .movie_title ul {width: auto;}
-    .movie_title ul li {width: 25%; box-sizing: border-box;;}
+    .movie_title ul li {width: 25%; box-sizing: border-box;}
+
+    .opening  {padding: 60px 0;}
+    .opening .open_box {display: none;}
+    .opening .desc {
+        font-size: 25px;
+        background: none;
+        margin-top: 15px;
+    }
+
 }
 @media (max-width: 768px) {
     body {background-color: #cbc7d0;}
-    .row {padding: 0 16px;}
+    .row {padding: 0 24px;}
     #mNav {right: 5px;}
     .header > h1 strong {display: none;}
     .header h1 {text-align: left;}
+    #movie {background: none;}
     #movie .row {
         background-color: #fff;
         margin: 24px;
@@ -425,6 +578,16 @@
         background-color: #666;
         z-index: 2;
     }
+
+    .event {
+        padding: 16px;
+        background: #fff;
+    }
+    .event h2 {font-size: 24px;}
+    .event .event_left {width: 100%; margin-right: 24px;}
+    .event .event_right {display: none;}
+    
+    #opening {margin-top: 24px;}
 } 
 @media (max-width: 600px) {
     .slider {
@@ -523,6 +686,28 @@
         border: 1px solid #ddd; 
     }
     .movie_chart > div > div > div .infor .infor_btn a:last-child {display: none;}
+    #event .row {padding: 0 8px;}
+    .event {padding: 16px;}
+    .event h2 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    #opening {margin-top: 8px;}
+    .opening  {padding: 16px 100px;}
+    .opening .date {display: none;}
+    .opening h2 .grand {
+        width: 197px;
+        height: 24px;
+        background-size: 300px;
+        background-position: 0 -105px;
+    }
+    .opening .desc {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25px;
+        padding-bottom: 0;
+        margin-top: 10px;
+    }
 }
 @media (max-width: 480px) {
     .movie_title ul li {
